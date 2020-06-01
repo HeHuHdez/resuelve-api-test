@@ -18,7 +18,7 @@ Instalación de Ruby mediante RVM / RBENV, se usa el comando rvm o rbenv dependi
 $ [rvm | rbenv] install 2.6.5
 
 # Usar la versión instalada.
-$ [rvm use | rbenv global ]  2.4.10
+$ [rvm use | rbenv global ]  2.6.5
 ```
 
 Configuración del proyecto:

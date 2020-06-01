@@ -1,0 +1,11 @@
+version: "3"
+services:
+  server:
+    build: .
+    stdin_open: true
+    tty: true
+    command: bash -c "bundle && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/app
+    ports: 
+      - "3000:3000"

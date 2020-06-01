@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
+# Parent class of controllers
 class ApplicationController < ActionController::API
-  rescue_from ActionController::ParameterMissing do |e|
-    render json: { error: 'Could not find a valid list of params' }
+  # Method to handle missing params exceptions
+  rescue_from ActionController::ParameterMissing do |_e|
+    render json: { error: 'The list of params is missing' }, status: :bad_request
   end
 end

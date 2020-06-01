@@ -3,6 +3,9 @@
 module Api
   class PaymentsController < ApplicationController
     def create
+      payments = PaymentService.new(player_params, team_tabulator_params)
+                               .calculate_payments
+      render json: payments
     end
 
     private
@@ -17,7 +20,7 @@ module Api
     # wants to use a different tabulator for the given team(s)
     def team_tabulator_params
       params.fetch(:new_team_tabulator, []).map do |p|
-        p.permit(%i[equipo A B C Cuah])
+        p.permit(%i[equipo A B C Cuauh])
       end
     end
   end

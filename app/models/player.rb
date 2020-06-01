@@ -2,7 +2,8 @@
 
 # Player class
 class Player
-  attr_accessor :nombre, :nivel, :goles, :sueldo, :bono, :sueldo_completo, :equipo
+  attr_accessor(:nombre, :nivel, :goles, :sueldo,
+                :bono, :sueldo_completo, :equipo, :team)
 
   def initialize(*args)
     args = args[0]
@@ -15,11 +16,13 @@ class Player
     @equipo = args[:equipo]
   end
 
-  def calculate_payment(required_score, team_percentage)
-    return unless [required_score, team_percentage].all? # Check for nil values
+  # Only calculates a player paycheck if it has a team with a tabulator
 
-    player_percentage = (goles * 100) / required_score
-    percentage_earned = (player_percentage + team_percentage) / 2
+  def calculate_paycheck
+    return unless team.is_a?(Team)
+
+    player_percentage = (goles * 100) / team.tabulator[nivel]
+    percentage_earned = (player_percentage + team.percentage) / 2
     @sueldo_completo = sueldo + ((percentage_earned * bono) / 100)
   end
 

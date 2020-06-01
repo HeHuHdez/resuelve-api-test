@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Service class to calculate player payments
 class PaymentService
   attr_reader :player_list, :players, :teams, :additional_info
 

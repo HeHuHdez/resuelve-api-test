@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 module Api
+  # Payment controller
   class PaymentsController < ApplicationController
+    def index
+      render json: { message: 'Test api for resuelve' }
+    end
+
     def create
       payments = PaymentService.new(player_params, team_tabulator_params)
                                .calculate_payments
@@ -24,10 +29,6 @@ module Api
         p.require(%i[equipo A B C Cuauh])
         p.permit(%i[equipo A B C Cuauh])
       end
-    end
-
-    def validate_numeric(values)
-
     end
   end
 end

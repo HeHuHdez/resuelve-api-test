@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'i18n'
 I18n.config.enforce_available_locales = true
 RSpec.configure do |config|

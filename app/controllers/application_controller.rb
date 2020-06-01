@@ -3,7 +3,7 @@
 # Parent class of controllers
 class ApplicationController < ActionController::API
   # Method to handle missing params exceptions
-  rescue_from ActionController::ParameterMissing do |_e|
-    render json: { error: 'The list of params is missing' }, status: :bad_request
+  rescue_from ActionController::ParameterMissing do |e|
+    render json: { error: e.message }, status: :bad_request
   end
 end

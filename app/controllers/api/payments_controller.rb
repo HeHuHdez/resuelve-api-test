@@ -12,6 +12,7 @@ module Api
 
     def player_params
       params.require(:_json).map do |p|
+        p.require(%i[nombre nivel goles sueldo bono equipo])
         p.permit(%i[nombre nivel goles sueldo bono sueldo_completo equipo])
       end
     end
@@ -20,8 +21,13 @@ module Api
     # wants to use a different tabulator for the given team(s)
     def team_tabulator_params
       params.fetch(:new_team_tabulator, []).map do |p|
+        p.require(%i[equipo A B C Cuauh])
         p.permit(%i[equipo A B C Cuauh])
       end
+    end
+
+    def validate_numeric(values)
+
     end
   end
 end

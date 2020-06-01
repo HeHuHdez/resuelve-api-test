@@ -57,7 +57,7 @@ RSpec.describe Api::PaymentsController, type: :controller do
       end
 
       it 'provides an error message due missing params' do
-        expect(json_body['error']).to include('The list of params is missing')
+        expect(json_body['error']).to include('param is missing or the value is empty')
       end
     end
 

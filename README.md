@@ -1,6 +1,9 @@
 # Prueba Resuelve
 
-API creada 
+API creada con la finalidad de resolver el reto de resuelve. 
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/db16d8ec9fbd403ea4939f211fef4698)](https://www.codacy.com/manual/HeHuHdez/reto-resuelve?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HeHuHdez/reto-resuelve&amp;utm_campaign=Badge_Grade)
+
 ## Requerimientos
 
 - Ruby 2.6.5

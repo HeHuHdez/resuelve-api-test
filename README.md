@@ -95,5 +95,5 @@ En el caso de mandar un nuevo tabulador para el calculo de los salarios, se tien
 Si asi se desea se pueden hacer consultas a un servidor que se encuentra activo en heroku. 
 
 ```text
-POST https://change_url.herokuapp.com/api/payments
+POST https://resuelve-api-test.herokuapp.com/
 ```
